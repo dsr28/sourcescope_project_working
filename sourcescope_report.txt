@@ -1,0 +1,323 @@
+SourceScope Analysis Report
+===========================
+Files: 17
+Symbols: 79
+Include edges: 23
+Call edges: 206
+
+SYMBOLS
+-------
+FUNCTION,analysis_print_statistics,./analysis.c,5
+FUNCTION,analysis_print_symbols,./analysis.c,14
+FUNCTION,analysis_print_dependencies,./analysis.c,20
+FUNCTION,analysis_search_symbols,./analysis.c,30
+FUNCTION,base_name,./analysis.c,44
+FUNCTION,path_matches,./analysis.c,48
+FUNCTION,analysis_impact,./analysis.c,52
+FUNCTION,analysis_write_report,./analysis.c,74
+VARIABLE,fn,./analysis.c,7
+VARIABLE,caller,./analysis.c,27
+VARIABLE,SS_MAX_NAME,./analysis.c,32
+VARIABLE,SS_MAX_PATH,./analysis.c,54
+VARIABLE,head,./analysis.c,55
+VARIABLE,changed,./analysis.c,61
+VARIABLE,e,./analysis.c,64
+VARIABLE,caller,./analysis.c,86
+MACRO,SOURCESCOPE_ANALYSIS_H,./analysis.h,2
+FUNCTION,bst_insert,./bst.c,5
+FUNCTION,bst_find,./bst.c,25
+FUNCTION,bst_free,./bst.c,34
+VARIABLE,cmp,./bst.c,7
+MACRO,SOURCESCOPE_BST_H,./bst.h,2
+VARIABLE,SS_MAX_NAME,./bst.h,5
+VARIABLE,symbol_index,./bst.h,6
+MACRO,SOURCESCOPE_COMMON_H,./common.h,2
+MACRO,SS_MAX_PATH,./common.h,4
+MACRO,SS_MAX_NAME,./common.h,5
+MACRO,SS_MAX_FILES,./common.h,6
+MACRO,SS_MAX_SYMBOLS,./common.h,7
+MACRO,SS_MAX_EDGES,./common.h,8
+VARIABLE,errors_count,./common.h,20
+FUNCTION,log_message,./logger.c,5
+VARIABLE,timestamp,./logger.c,9
+VARIABLE,level_text,./logger.c,19
+MACRO,LOGGER_H,./logger.h,2
+FUNCTION,main,./main.c,10
+VARIABLE,choice,./main.c,13
+VARIABLE,ch,./main.c,70
+FUNCTION,id_start,./parser.c,7
+FUNCTION,id_part,./parser.c,8
+FUNCTION,is_keyword,./parser.c,9
+FUNCTION,mask_source,./parser.c,17
+FUNCTION,line_at,./parser.c,42
+FUNCTION,directives,./parser.c,46
+FUNCTION,find_definitions,./parser.c,73
+FUNCTION,find_calls,./parser.c,92
+FUNCTION,find_simple_variables,./parser.c,118
+FUNCTION,parser_analyze_file,./parser.c,139
+VARIABLE,c,./parser.c,23
+VARIABLE,end,./parser.c,34
+VARIABLE,line,./parser.c,48
+VARIABLE,SS_MAX_NAME,./parser.c,55
+VARIABLE,SS_MAX_PATH,./parser.c,61
+VARIABLE,line,./parser.c,120
+VARIABLE,last,./parser.c,124
+MACRO,SOURCESCOPE_PARSER_H,./parser.h,2
+FUNCTION,symbol_type_name,./project.c,6
+FUNCTION,project_add_symbol,./project.c,15
+FUNCTION,project_add_file_edge,./project.c,33
+FUNCTION,project_add_call_edge,./project.c,45
+FUNCTION,project_find_function,./project.c,57
+FUNCTION,project_cleanup,./project.c,65
+VARIABLE,i,./project.c,17
+VARIABLE,i,./project.c,35
+VARIABLE,i,./project.c,47
+VARIABLE,i,./project.c,59
+VARIABLE,i,./project.c,67
+MACRO,SOURCESCOPE_PROJECT_H,./project.h,2
+FUNCTION,main,./sample_project/main.c,4
+FUNCTION,add,./sample_project/math_utils.c,3
+MACRO,MATH_UTILS_H,./sample_project/math_utils.h,2
+MACRO,_POSIX_C_SOURCE,./scanner.c,1
+FUNCTION,ends_with,./scanner.c,9
+FUNCTION,join_path,./scanner.c,14
+FUNCTION,scanner_add_file,./scanner.c,20
+FUNCTION,scanner_scan_directory,./scanner.c,37
+VARIABLE,sep,./scanner.c,17
+VARIABLE,SS_MAX_PATH,./scanner.c,44
+MACRO,SOURCESCOPE_SCANNER_H,./scanner.h,2
+
+FILE DEPENDENCIES
+-----------------
+./analysis.c -> analysis.h (line 1)
+./analysis.c -> bst.h (line 4)
+./analysis.h -> common.h (line 3)
+./bst.c -> bst.h (line 1)
+./bst.h -> common.h (line 3)
+./common.h -> stddef.h (line 3)
+./logger.c -> logger.h (line 1)
+./main.c -> common.h (line 1)
+./main.c -> scanner.h (line 4)
+./main.c -> parser.h (line 5)
+./main.c -> analysis.h (line 6)
+./main.c -> project.h (line 7)
+./main.c -> logger.h (line 8)
+./parser.c -> parser.h (line 1)
+./parser.c -> project.h (line 6)
+./parser.h -> common.h (line 3)
+./project.c -> project.h (line 1)
+./project.c -> bst.h (line 5)
+./project.h -> common.h (line 3)
+./sample_project/main.c -> math_utils.h (line 1)
+./sample_project/math_utils.c -> math_utils.h (line 1)
+./scanner.c -> scanner.h (line 2)
+./scanner.h -> common.h (line 3)
+
+FUNCTION CALLS
+--------------
+analysis_print_statistics -> puts (./analysis.c:10)
+analysis_print_statistics -> printf (./analysis.c:11)
+analysis_print_symbols -> puts (./analysis.c:16)
+analysis_print_symbols -> printf (./analysis.c:18)
+analysis_print_symbols -> symbol_type_name (./analysis.c:18)
+analysis_print_dependencies -> puts (./analysis.c:22)
+analysis_print_dependencies -> printf (./analysis.c:24)
+analysis_print_dependencies -> puts (./analysis.c:25)
+analysis_print_dependencies -> printf (./analysis.c:28)
+analysis_search_symbols -> printf (./analysis.c:33)
+analysis_search_symbols -> scanf (./analysis.c:33)
+analysis_search_symbols -> bst_find (./analysis.c:34)
+analysis_search_symbols -> printf (./analysis.c:36)
+analysis_search_symbols -> symbol_type_name (./analysis.c:36)
+analysis_search_symbols -> puts (./analysis.c:37)
+analysis_search_symbols -> puts (./analysis.c:38)
+analysis_search_symbols -> strstr (./analysis.c:39)
+analysis_search_symbols -> printf (./analysis.c:40)
+analysis_search_symbols -> symbol_type_name (./analysis.c:40)
+analysis_search_symbols -> puts (./analysis.c:42)
+base_name -> strrchr (./analysis.c:46)
+path_matches -> strcmp (./analysis.c:50)
+path_matches -> base_name (./analysis.c:50)
+path_matches -> strstr (./analysis.c:50)
+analysis_impact -> printf (./analysis.c:56)
+analysis_impact -> scanf (./analysis.c:56)
+analysis_impact -> path_matches (./analysis.c:57)
+analysis_impact -> printf (./analysis.c:59)
+analysis_impact -> base_name (./analysis.c:62)
+analysis_impact -> strcmp (./analysis.c:65)
+analysis_impact -> strcmp (./analysis.c:66)
+analysis_impact -> puts (./analysis.c:70)
+analysis_impact -> printf (./analysis.c:71)
+analysis_impact -> puts (./analysis.c:72)
+analysis_write_report -> fopen (./analysis.c:76)
+analysis_write_report -> perror (./analysis.c:76)
+analysis_write_report -> fprintf (./analysis.c:77)
+analysis_write_report -> fprintf (./analysis.c:79)
+analysis_write_report -> fprintf (./analysis.c:81)
+analysis_write_report -> symbol_type_name (./analysis.c:81)
+analysis_write_report -> fprintf (./analysis.c:82)
+analysis_write_report -> fprintf (./analysis.c:83)
+analysis_write_report -> fprintf (./analysis.c:84)
+analysis_write_report -> fprintf (./analysis.c:87)
+analysis_write_report -> fclose (./analysis.c:88)
+analysis_write_report -> printf (./analysis.c:88)
+bst_insert -> calloc (./bst.c:9)
+bst_insert -> snprintf (./bst.c:11)
+bst_insert -> strcmp (./bst.c:15)
+bst_insert -> bst_insert (./bst.c:17)
+bst_insert -> bst_insert (./bst.c:20)
+bst_find -> strcmp (./bst.c:28)
+bst_free -> bst_free (./bst.c:37)
+bst_free -> free (./bst.c:37)
+log_message -> time (./logger.c:7)
+log_message -> localtime (./logger.c:8)
+log_message -> fprintf (./logger.c:12)
+log_message -> strftime (./logger.c:16)
+log_message -> fprintf (./logger.c:26)
+main -> log_message (./main.c:15)
+main -> fprintf (./main.c:18)
+main -> log_message (./main.c:19)
+main -> calloc (./main.c:23)
+main -> fputs (./main.c:26)
+main -> log_message (./main.c:27)
+main -> log_message (./main.c:31)
+main -> scanner_scan_directory (./main.c:32)
+main -> fprintf (./main.c:35)
+main -> log_message (./main.c:36)
+main -> project_cleanup (./main.c:37)
+main -> free (./main.c:38)
+main -> log_message (./main.c:39)
+main -> printf (./main.c:43)
+main -> printf (./main.c:47)
+main -> log_message (./main.c:50)
+main -> parser_analyze_file (./main.c:51)
+main -> log_message (./main.c:54)
+main -> analysis_print_statistics (./main.c:56)
+main -> analysis_print_dependencies (./main.c:57)
+main -> puts (./main.c:60)
+main -> printf (./main.c:67)
+main -> scanf (./main.c:69)
+main -> getchar (./main.c:71)
+main -> puts (./main.c:72)
+main -> log_message (./main.c:73)
+main -> log_message (./main.c:79)
+main -> analysis_print_symbols (./main.c:80)
+main -> log_message (./main.c:84)
+main -> analysis_search_symbols (./main.c:85)
+main -> log_message (./main.c:89)
+main -> analysis_impact (./main.c:90)
+main -> log_message (./main.c:94)
+main -> analysis_write_report (./main.c:95)
+main -> log_message (./main.c:96)
+main -> log_message (./main.c:100)
+main -> project_cleanup (./main.c:101)
+main -> free (./main.c:102)
+main -> log_message (./main.c:103)
+main -> puts (./main.c:107)
+main -> log_message (./main.c:108)
+id_start -> isalpha (./parser.c:7)
+id_part -> isalnum (./parser.c:8)
+is_keyword -> strcmp (./parser.c:15)
+mask_source -> malloc (./parser.c:19)
+mask_source -> memcpy (./parser.c:21)
+directives -> strchr (./parser.c:50)
+directives -> strlen (./parser.c:50)
+directives -> isspace (./parser.c:53)
+directives -> strncmp (./parser.c:54)
+directives -> isspace (./parser.c:54)
+directives -> isspace (./parser.c:56)
+directives -> id_part (./parser.c:57)
+directives -> project_add_symbol (./parser.c:58)
+directives -> strncmp (./parser.c:59)
+directives -> strchr (./parser.c:60)
+directives -> strchr (./parser.c:62)
+directives -> strchr (./parser.c:63)
+directives -> memcpy (./parser.c:65)
+directives -> project_add_file_edge (./parser.c:66)
+find_definitions -> strlen (./parser.c:75)
+find_definitions -> id_start (./parser.c:77)
+find_definitions -> id_part (./parser.c:79)
+find_definitions -> memcpy (./parser.c:80)
+find_definitions -> is_keyword (./parser.c:81)
+find_definitions -> isspace (./parser.c:82)
+find_definitions -> isspace (./parser.c:86)
+find_definitions -> project_add_symbol (./parser.c:88)
+find_definitions -> line_at (./parser.c:88)
+find_calls -> strlen (./parser.c:94)
+find_calls -> id_start (./parser.c:96)
+find_calls -> id_part (./parser.c:98)
+find_calls -> memcpy (./parser.c:99)
+find_calls -> isspace (./parser.c:100)
+find_calls -> is_keyword (./parser.c:101)
+find_calls -> isspace (./parser.c:104)
+find_calls -> project_find_function (./parser.c:106)
+find_calls -> project_add_call_edge (./parser.c:108)
+find_calls -> line_at (./parser.c:108)
+find_simple_variables -> strchr (./parser.c:122)
+find_simple_variables -> strlen (./parser.c:122)
+find_simple_variables -> memcpy (./parser.c:125)
+find_simple_variables -> isspace (./parser.c:125)
+find_simple_variables -> strchr (./parser.c:126)
+find_simple_variables -> strncmp (./parser.c:127)
+find_simple_variables -> strncmp (./parser.c:128)
+find_simple_variables -> strncmp (./parser.c:129)
+find_simple_variables -> strncmp (./parser.c:130)
+find_simple_variables -> strchr (./parser.c:131)
+find_simple_variables -> strtok (./parser.c:132)
+find_simple_variables -> id_start (./parser.c:133)
+find_simple_variables -> is_keyword (./parser.c:133)
+find_simple_variables -> strtok (./parser.c:133)
+find_simple_variables -> project_add_symbol (./parser.c:134)
+parser_analyze_file -> mask_source (./parser.c:141)
+parser_analyze_file -> fprintf (./parser.c:142)
+parser_analyze_file -> directives (./parser.c:143)
+parser_analyze_file -> find_definitions (./parser.c:143)
+parser_analyze_file -> find_calls (./parser.c:143)
+parser_analyze_file -> find_simple_variables (./parser.c:144)
+parser_analyze_file -> free (./parser.c:144)
+project_add_symbol -> strlen (./project.c:18)
+project_add_symbol -> strcmp (./project.c:21)
+project_add_symbol -> snprintf (./project.c:23)
+project_add_symbol -> bst_insert (./project.c:26)
+project_add_file_edge -> strcmp (./project.c:37)
+project_add_file_edge -> strcmp (./project.c:38)
+project_add_file_edge -> snprintf (./project.c:40)
+project_add_file_edge -> snprintf (./project.c:41)
+project_add_file_edge -> snprintf (./project.c:42)
+project_add_call_edge -> strcmp (./project.c:50)
+project_add_call_edge -> snprintf (./project.c:53)
+project_find_function -> strcmp (./project.c:62)
+project_cleanup -> free (./project.c:68)
+project_cleanup -> bst_free (./project.c:69)
+main -> add (./sample_project/main.c:6)
+main -> printf (./sample_project/main.c:7)
+ends_with -> strlen (./scanner.c:11)
+ends_with -> strcmp (./scanner.c:12)
+join_path -> strlen (./scanner.c:16)
+join_path -> snprintf (./scanner.c:18)
+scanner_add_file -> fopen (./scanner.c:24)
+scanner_add_file -> fprintf (./scanner.c:25)
+scanner_add_file -> strerror (./scanner.c:25)
+scanner_add_file -> fseek (./scanner.c:26)
+scanner_add_file -> ftell (./scanner.c:26)
+scanner_add_file -> fclose (./scanner.c:27)
+scanner_add_file -> malloc (./scanner.c:29)
+scanner_add_file -> fclose (./scanner.c:30)
+scanner_add_file -> fread (./scanner.c:31)
+scanner_add_file -> fclose (./scanner.c:31)
+scanner_add_file -> free (./scanner.c:32)
+scanner_add_file -> snprintf (./scanner.c:34)
+scanner_scan_directory -> opendir (./scanner.c:41)
+scanner_scan_directory -> fprintf (./scanner.c:42)
+scanner_scan_directory -> readdir (./scanner.c:43)
+scanner_scan_directory -> strcmp (./scanner.c:45)
+scanner_scan_directory -> join_path (./scanner.c:46)
+scanner_scan_directory -> stat (./scanner.c:47)
+scanner_scan_directory -> S_ISDIR (./scanner.c:48)
+scanner_scan_directory -> strcmp (./scanner.c:49)
+scanner_scan_directory -> strcmp (./scanner.c:50)
+scanner_scan_directory -> scanner_scan_directory (./scanner.c:50)
+scanner_scan_directory -> S_ISREG (./scanner.c:51)
+scanner_scan_directory -> ends_with (./scanner.c:52)
+scanner_scan_directory -> scanner_add_file (./scanner.c:53)
+scanner_scan_directory -> closedir (./scanner.c:56)
